@@ -1,44 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-
-const MainTitle =  ({count}) => {
-    return(
-        <div>
-            <div>
-                <h1>Items to-do ({count})</h1>
-            </div>
-        </div>
-    )
-}
-
-const TodoForm = ({addItem}) => {
-    let input;
-
-    return (
-      <form onSubmit={(e) => {
-          e.preventDefault();
-          addItem(input.value);
-          input.value = '';
-        }}>
-        <input className="form-control col-md-12" ref={node => {
-          input = node;
-        }} />
-        <br />
-      </form>
-    );
-  };
-
-  const Todo = ({todo, remove}) => {
-    return (<a href="#" className="list-group-item" onClick={() => {remove(todo.id)}}>{todo.text}</a>);
-  }
-
-  const TodoList = ({todos, remove}) => {
-    const todoNode = todos.map((todo) => {
-      return (<Todo todo={todo} key={todo.id} remove={remove}/>)
-    });
-    return (<div className="list-group" style={{marginTop:'30px'}}>{todoNode}</div>);
-  }
-
+import ToDoForm from './components/ToDoForm'
+import ToDoList from './components/ToDoList'
+import MainTitle from './components/Title'
 
 window.id = 0;
 class TodoApp extends React.Component{
@@ -69,8 +33,8 @@ class TodoApp extends React.Component{
     return (
       <div>
         <MainTitle count={this.state.data.length}/>
-        <TodoForm addItem={this.addItem.bind(this)}/>
-        <TodoList
+        <ToDoForm addItem={this.addItem.bind(this)}/>
+        <ToDoList
           todos={this.state.data}
           remove={this.removeItem.bind(this)}
         />

@@ -5,6 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
+    devtool: 'source-map',
     entry: APP_DIR + '/index.js',
     output: {
         path: BUILD_DIR,
