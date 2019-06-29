@@ -1,6 +1,7 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
+  "author": "Stephen Richards",
   "main": "app.js",
   "license": "MIT",
   "scripts": {
