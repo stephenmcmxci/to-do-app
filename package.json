@@ -14,7 +14,7 @@
     "nodemon": "^1.18.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "serve": "^10.0.0",
+    "serve": "^10.1.2",
     "webpack": "^4.17.1"
   },
   "devDependencies": {
